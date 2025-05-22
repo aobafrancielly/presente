@@ -8,17 +8,18 @@ body {
 
 .intro {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #2a0033; /* roxo bem escuro */
-  color: white;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(270deg, #7B2FF7, #9D43FF, #6A00F4, #7B2FF7);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #EDE7F6; /* lilás clarinho */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 1000;
-  transition: opacity 1s ease;
+  overflow: hidden;
 }
 
 .intro-content {
@@ -26,31 +27,63 @@ body {
   animation: pulse 2s infinite;
 }
 
+.intro-content h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #c8aaff, #a87fff, #ddaaff, #c8aaff);
+  background-size: 400% 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientGlow 12s ease-in-out infinite;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  user-select: none;
+  text-shadow: 0 0 8px #e2cfff, 0 0 16px #b388ff;
+}
+
+@keyframes gradientGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .intro button {
-  margin-top: 1rem;
-  background-color: #ff9900;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #9D43FF;
+  background: rgba(237, 231, 246, 0.15); /* lilás transparente */
+  border: 2px solid #9D43FF;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #9D43FF;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
 
 .intro button:hover {
-  background-color: #ffbb33;
+  color: #7B2FF7;
+  background: rgba(123, 47, 247, 0.4);
+  box-shadow: 0 0 20px #7B2FF7, 0 0 40px #9D43FF;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 .intro.fade-out {
   opacity: 0;
   pointer-events: none;
+  transition: opacity 1s ease;
 }
 
 
@@ -233,8 +266,14 @@ footer {
 }
 
 .foto.expandida {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
   z-index: 999;
-  transform: scale(1.5);
+  background-color: #fff0f8;
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.6);
+  padding: 1.5rem;
 }
 
 .coracao {
@@ -258,3 +297,5 @@ footer {
     transform: translateY(-100px) scale(1.5);
   }
 }
+
+
