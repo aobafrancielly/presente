@@ -25,36 +25,36 @@
     <h1>Para muel 💖</h1>
     <p class="frase">"I wanna be yours"</p>
 
-      <!-- Carta -->
-      <section>
-        <h2>💌 Carta de Amor</h2>
+    <!-- Carta -->
+    <section>
+      <h2>💌 Carta de Amor</h2>
         <div class="card">
           <p>Meu amor, saiu um pouco demorado, mas programar é dificil KKKK, mas saiu! Queria te agradecer por cada momento, mesmo que a maior parte do tempo seja brigando he. Mas quero que saiba, que a nossa data importante pra mim, sempre vai ser muito especial, muito mesmo. E que independente de qualquer coisa, sempre vou fazer algo a respeito.. Eu te amo até o infinito, espero que goste meu amor.  <strong>I wanna be yours</strong> — por toda eternidade.</p>
           <p class="assinatura">Com amor, sua mulher 💘</p>
         </div>
-      </section>
+    </section>
 
-      <!-- Linha do Tempo -->
-      <section>
-        <h2>⏳ Nossa História</h2>
+    <!-- Linha do Tempo -->
+    <section>
+      <h2>⏳ Nossa História</h2>
         <ul class="timeline">
           <li><strong>12.02.20</strong> — primeira data especial nossa, mas quando nos conhecemos é bem especial também💘</li>
           <li><strong>05.08.23</strong> — nosso dia, ate hoje!!💖</li>
           <li><strong>16.01.25</strong> — A gente finalmente se encontrou!</li>
           <li><strong></strong>Temos várias outras, aniversários, momentos, presentes, mas esses são o que eu mais adoro</li>
         </ul>
-      </section>
+    </section>
 
-      <!-- Galeria + Música -->
-      <section>
-        <h2>🎵 Nossas Memórias</h2>
+    <!-- Galeria + Música -->
+    <section>
+      <h2>🎵 Nossas Memórias</h2>
         <div class="galeria">
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu.jpg" alt="Foto 1"/>Foto 1</div>
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu2.jpg" alt="Foto 2"/>Foto 2</div>
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu3.jpg" alt="Foto 3"/>Foto 3</div>
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu4.jpg" alt="Foto 4"/>Foto 4</div>
         </div>
-        <iframe 
+      <iframe 
           src="https://open.spotify.com/embed/track/1SOClUWhOi8vHZYMz3GluK"
           width="100%" 
           height="80" 
@@ -62,69 +62,82 @@
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
           loading="lazy">
       </iframe>
-      </section>
+    </section>
 
-      <!-- Quiz -->
-      <section>
-        <h2>🎮 Quiz do Amor</h2>
+    <!-- Quiz -->
+    <section>
+      <h2>🎮 Quiz do Amor</h2>
         <div class="quiz">
           <div class="pergunta">
             <p>Qual a comida favorita da franfran?</p>
-            <button onclick="mostrarResposta(this)">Mostrar resposta</button>
+              <button onclick="mostrarResposta(this)">Mostrar resposta</button>
             <p class="resposta hidden">Estrogonofe</p>
           </div>
-          <div class="pergunta">
-            <p>Melhor momento junto?</p>
+        <div class="pergunta">
+          <p>Melhor momento junto?</p>
             <button onclick="mostrarResposta(this)">Mostrar resposta</button>
             <p class="resposta hidden">Praia (queria ter visto o pôr do sol com você...)</p>
-          </div>
-          <div class="pergunta">
-            <p>Qual música é a nossa cara?</p>
-            <button onclick="mostrarResposta(this)">Mostrar resposta</button>
-            <p class="resposta hidden">I Wanna Be Yours - Arctic Monkeys 🎧</p>
-          </div>
         </div>
-      </section>
-      <script>
-        function iniciarSite() {
-        const intro = document.getElementById('intro');
-        const conteudo = document.getElementById('conteudoPrincipal');
+        <div class="pergunta">
+          <p>Qual música é a nossa cara?</p>
+            <button onclick="mostrarResposta(this)">Mostrar resposta</button>
+          <p class="resposta hidden">I Wanna Be Yours - Arctic Monkeys 🎧</p>
+        </div>
+        </div>
+    </section>
+    <script>
+      function iniciarSite() {
+      const intro = document.getElementById('intro');
+      const conteudo = document.getElementById('conteudoPrincipal');
 
-        intro.classList.add('fade-out');
+      intro.classList.add('fade-out');
 
-        setTimeout(() => {
-        intro.style.display = 'none';
-        conteudo.classList.remove('hidden');
-        }, 1000); // tempo igual ao transition
+      setTimeout(() => {
+      intro.style.display = 'none';
+      conteudo.classList.remove('hidden');
+      }, 1000); // tempo igual ao transition
       }
-      </script>
-      <footer>
-        Feito com 💘 por franzinha para muel – Finalizado 22 de Maio de 2025 (ainda tem mais)
-      </footer>
+    </script>
+    <footer>
+      Feito com 💘 por franzinha para muel – Finalizado 22 de Maio de 2025 (ainda tem mais)
+    </footer>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-      <script>
-function abrirFoto(el) {
-  el.classList.toggle('expandida');
+  <script>
+    function abrirFoto(el) {
+  const todas = document.querySelectorAll('.foto');
 
+  // Se já estiver expandida, recolhe
+  if (el.classList.contains('expandida')) {
+    el.classList.remove('expandida');
+    return;
+  }
+
+  // Recolhe todas antes
+  todas.forEach(foto => {
+    foto.classList.remove('expandida');
+  });
+
+  // Expande a clicada
+  el.classList.add('expandida');
+
+  // Efeito de coração (opcional)
   for (let i = 0; i < 5; i++) {
     const coracao = document.createElement('div');
     coracao.classList.add('coracao');
 
-    // posição aleatória dentro da div
     coracao.style.left = Math.random() * 80 + '%';
     coracao.style.top = Math.random() * 80 + '%';
-
-    el.appendChild(coracao); // CORRETO: adiciona direto no container da foto
+    el.appendChild(coracao);
 
     setTimeout(() => {
       coracao.remove();
     }, 1000);
   }
 }
-</script>
+  </script>
+
   <script src="script.js"></script>
+  
 </body>
 </html>
