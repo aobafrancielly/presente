@@ -29,7 +29,7 @@
       <section>
         <h2>💌 Carta de Amor</h2>
         <div class="card">
-          <p>Meu amor, saiu um pouco demorado, mas programar é dificil KKKK, mas saiu! Queria te agradecer por cada momento, mesmo que a mior parte do tempo seja brigando he. Mas quero que saiba, que a nossa data importante pra mim, sempre vai ser muito especial, muito mesmo. E que independente de qualquer coisa, sempre vou fazer algo a respeito.. Eu te amo até o infinito, espero que goste meu amor.  <strong>I wanna be yours</strong> — por toda eternidade.</p>
+          <p>Meu amor, saiu um pouco demorado, mas programar é dificil KKKK, mas saiu! Queria te agradecer por cada momento, mesmo que a maior parte do tempo seja brigando he. Mas quero que saiba, que a nossa data importante pra mim, sempre vai ser muito especial, muito mesmo. E que independente de qualquer coisa, sempre vou fazer algo a respeito.. Eu te amo até o infinito, espero que goste meu amor.  <strong>I wanna be yours</strong> — por toda eternidade.</p>
           <p class="assinatura">Com amor, sua mulher 💘</p>
         </div>
       </section>
@@ -49,10 +49,10 @@
       <section>
         <h2>🎵 Nossas Memórias</h2>
         <div class="galeria">
-          <div class="foto"><img src="css/media/eu.jpg" />Foto 1</div>
-          <div class="foto"><img src="css/media/eu2.jpg" />Foto 2</div>
-          <div class="foto"><img src="css/media/eu3.jpg" />Foto 3</div>
-          <div class="foto"><img src="css/media/eu4.jpg" />Foto 4</div>
+          <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu.jpg" alt="Foto 1"/>Foto 1</div>
+          <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu2.jpg" alt="Foto 2"/>Foto 2</div>
+          <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu3.jpg" alt="Foto 3"/>Foto 3</div>
+          <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu4.jpg" alt="Foto 4"/>Foto 4</div>
         </div>
         <iframe 
           src="https://open.spotify.com/embed/track/1SOClUWhOi8vHZYMz3GluK"
@@ -99,11 +99,32 @@
       }
       </script>
       <footer>
-        Feito com 💘 por franzinha para muel – 05 de Maio de 2025
+        Feito com 💘 por franzinha para muel – Finalizado 22 de Maio de 2025 (ainda tem mais)
       </footer>
     </div>
   </div>
 
+  <script src="script.js"></script>
+      <script>
+function abrirFoto(el) {
+  el.classList.toggle('expandida');
+
+  for (let i = 0; i < 5; i++) {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao');
+
+    // posição aleatória dentro da div
+    coracao.style.left = Math.random() * 80 + '%';
+    coracao.style.top = Math.random() * 80 + '%';
+
+    el.appendChild(coracao); // CORRETO: adiciona direto no container da foto
+
+    setTimeout(() => {
+      coracao.remove();
+    }, 1000);
+  }
+}
+</script>
   <script src="script.js"></script>
 </body>
 </html>
