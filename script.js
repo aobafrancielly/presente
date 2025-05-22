@@ -9,10 +9,25 @@ document.getElementById('startButton').addEventListener('click', function () {
 // Função para mostrar a resposta no quiz
 function mostrarResposta(botao) {
   const resposta = botao.nextElementSibling;
-  resposta.classList.remove('hidden');
-  resposta.classList.add('fade-in');
+  resposta.classList.toggle('hidden');
+  botao.textContent = resposta.classList.contains('hidden') ? 'Mostrar resposta' : 'Esconder resposta';
 }
 
 // Expondo a função globalmente
 window.mostrarResposta = mostrarResposta;
 
+
+//Para abrir a foto etc
+
+function abrirFoto(el) {
+  const img = el.querySelector('img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  lightboxImg.src = img.src;
+  lightbox.style.display = 'flex';
+}
+
+function fecharLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
