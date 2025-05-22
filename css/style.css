@@ -1,9 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #c8aaff, #ffe4b3); /* roxo claro para laranja claro */
-  color: #3a1959; /* roxo bem escuro */
+  font-family: 'Arial', serif;
+  background: linear-gradient(270deg, #7B2FF7, #9D43FF, #6A00F4, #7B2FF7);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
 }
 
 .intro {
@@ -168,13 +169,17 @@ section {
 }
 
 /* Para telas menores (celular) */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .galeria {
-    grid-template-columns: 1fr; /* 1 coluna só */
+    grid-template-columns: 1fr;
   }
 
-  .foto img {
-    height: 150px; /* diminui um pouco a altura da foto */
+  h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -329,4 +334,61 @@ footer {
     transform: translateY(-100vh) scale(0.5);
     opacity: 0;
   }
+}
+
+/* -- animação coração -- */
+
+.floating-heart {
+  position: fixed;
+  bottom: -50px;
+  left: 50%;
+  font-size: 2rem;
+  animation: floatHeart 6s ease-in-out infinite;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-20px) translateY(-150px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20px) translateY(-300px);
+    opacity: 0;
+  }
+}
+
+/* -- teste das fotos -- */
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  animation: fadeIn 0.3s ease;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
