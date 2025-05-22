@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <div class="floating-heart">💖</div>
+
   <div id="intro" class="intro">
     <div class="particles"></div>
     <div class="intro-content">
@@ -20,7 +22,6 @@
 
   <!-- Aqui vai o resto do seu conteúdo -->
 
-  </div>
 
   <div class="container">
     <h1>Para muel 💖</h1>
@@ -54,6 +55,8 @@
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu2.jpg" alt="Foto 2"/>Foto 2</div>
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu3.jpg" alt="Foto 3"/>Foto 3</div>
           <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu4.jpg" alt="Foto 4"/>Foto 4</div>
+          <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu4.jpg" alt="Foto 5"/>Foto 5</div>
+          <div class="foto" onclick="abrirFoto(this)"><img src="css/media/eu4.jpg" alt="Foto 6"/>Foto 6</div>
         </div>
       <iframe 
           src="https://open.spotify.com/embed/track/1SOClUWhOi8vHZYMz3GluK"
@@ -99,10 +102,17 @@
       }, 1000); // tempo igual ao transition
       }
     </script>
+
+  </div>
+
+  <!--Rodapé-->
+
     <footer>
       Feito com 💘 por franzinha para muel – Finalizado 22 de Maio de 2025 (ainda tem mais)
     </footer>
     </div>
+
+<!-- Animações -->
 
   <script>
     function abrirFoto(el) {
@@ -150,6 +160,22 @@
     container.appendChild(particle);
   }
 </script>
+<script>
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'floating-heart';
+    heart.innerText = '💖';
+    heart.style.left = Math.random() * 90 + '%';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 7000); // aparece a cada 7 segundos
+</script>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="fecharLightbox()">
+  <img id="lightbox-img" src="css/media/eu.jpg" alt="Imagem em destaque">
+</div>
+
 
   <script src="script.js"></script>
 
