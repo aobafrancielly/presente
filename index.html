@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>franzinha & muel 💖</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="intro" class="intro">
+    <div class="intro-content">
+      <h1>Gostaria de ver?</h1>
+      <button onclick="iniciarSite()">💖</button>
+    </div>
+  </div>
+
+  <div class="container hidden" id="conteudoPrincipal">
+
+  <!-- Aqui vai o resto do seu conteúdo -->
+
+  </div>
+
+  <div class="container">
+    <h1>Para muel 💖</h1>
+    <p class="frase">"I wanna be yours"</p>
+
+      <!-- Carta -->
+      <section>
+        <h2>💌 Carta de Amor</h2>
+        <div class="card">
+          <p>Meu amor, saiu um pouco demorado, mas programar é dificil KKKK, mas saiu! Queria te agradecer por cada momento, mesmo que a mior parte do tempo seja brigando he. Mas quero que saiba, que a nossa data importante pra mim, sempre vai ser muito especial, muito mesmo. E que independente de qualquer coisa, sempre vou fazer algo a respeito.. Eu te amo até o infinito, espero que goste meu amor.  <strong>I wanna be yours</strong> — por toda eternidade.</p>
+          <p class="assinatura">Com amor, sua mulher 💘</p>
+        </div>
+      </section>
+
+      <!-- Linha do Tempo -->
+      <section>
+        <h2>⏳ Nossa História</h2>
+        <ul class="timeline">
+          <li><strong>12.02.20</strong> — primeira data especial nossa, mas quando nos conhecemos é bem especial também💘</li>
+          <li><strong>05.08.23</strong> — nosso dia, ate hoje!!💖</li>
+          <li><strong>16.01.25</strong> — A gente finalmente se encontrou!</li>
+          <li><strong></strong>Temos várias outras, aniversários, momentos, presentes, mas esses são o que eu mais adoro</li>
+        </ul>
+      </section>
+
+      <!-- Galeria + Música -->
+      <section>
+        <h2>🎵 Nossas Memórias</h2>
+        <div class="galeria">
+          <div class="foto"><img src="css/media/eu.jpg" />Foto 1</div>
+          <div class="foto"><img src="css/media/eu2.jpg" />Foto 2</div>
+          <div class="foto"><img src="css/media/eu3.jpg" />Foto 3</div>
+          <div class="foto"><img src="css/media/eu4.jpg" />Foto 4</div>
+        </div>
+        <iframe 
+          src="https://open.spotify.com/embed/track/1SOClUWhOi8vHZYMz3GluK"
+          width="100%" 
+          height="80" 
+          frameborder="0" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy">
+      </iframe>
+      </section>
+
+      <!-- Quiz -->
+      <section>
+        <h2>🎮 Quiz do Amor</h2>
+        <div class="quiz">
+          <div class="pergunta">
+            <p>Qual a comida favorita da franfran?</p>
+            <button onclick="mostrarResposta(this)">Mostrar resposta</button>
+            <p class="resposta hidden">Estrogonofe</p>
+          </div>
+          <div class="pergunta">
+            <p>Melhor momento junto?</p>
+            <button onclick="mostrarResposta(this)">Mostrar resposta</button>
+            <p class="resposta hidden">Praia (queria ter visto o pôr do sol com você...)</p>
+          </div>
+          <div class="pergunta">
+            <p>Qual música é a nossa cara?</p>
+            <button onclick="mostrarResposta(this)">Mostrar resposta</button>
+            <p class="resposta hidden">I Wanna Be Yours - Arctic Monkeys 🎧</p>
+          </div>
+        </div>
+      </section>
+      <script>
+        function iniciarSite() {
+        const intro = document.getElementById('intro');
+        const conteudo = document.getElementById('conteudoPrincipal');
+
+        intro.classList.add('fade-out');
+
+        setTimeout(() => {
+        intro.style.display = 'none';
+        conteudo.classList.remove('hidden');
+        }, 1000); // tempo igual ao transition
+      }
+      </script>
+      <footer>
+        Feito com 💘 por franzinha para muel – 05 de Maio de 2025
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

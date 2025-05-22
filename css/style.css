@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #c8aaff, #ffe4b3); /* roxo claro para laranja claro */
+  color: #3a1959; /* roxo bem escuro */
+}
+
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2a0033; /* roxo bem escuro */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+.intro-content {
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+.intro button {
+  margin-top: 1rem;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.intro button:hover {
+  background-color: #ffbb33;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #4c1c8c; /* roxo vibrante escuro */
+}
+
+.frase {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #e86c00; /* laranja forte */
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  background-color: #7f3fbf; /* roxo médio escuro */
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff7300; /* laranja mais forte */
+}
+
+.hidden {
+  display: none;
+}
+
+section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff0d9; /* laranja muito claro */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #b488e8; /* sombra roxa suave */
+}
+
+.card {
+  background-color: #ead9ff; /* roxo bem claro */
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px dashed #d86c00; /* laranja forte */
+  color: #3a1959; /* roxo escuro */
+}
+
+.assinatura {
+  margin-top: 1rem;
+  font-style: italic;
+  text-align: right;
+  color: #a84d00; /* laranja escuro vibrante */
+}
+
+.timeline {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.timeline li {
+  margin: 0.5rem 0;
+  color: #4c1c8c; /* roxo escuro */
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Para telas menores (celular) */
+@media (max-width: 600px) {
+  .galeria {
+    grid-template-columns: 1fr; /* 1 coluna só */
+  }
+
+  .foto img {
+    height: 150px; /* diminui um pouco a altura da foto */
+  }
+}
+
+
+.foto {
+  background-color: #c6a1ff; /* roxo pastel mais escuro */
+  padding: 2rem;
+  border-radius: 8px;
+  color: #a84d00; /* laranja escuro */
+  font-weight: bold;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 180px; /* tamanho do quadradinho */
+  aspect-ratio: 1 / 1; /* mantém quadrado */
+  object-fit: cover; /* corta a imagem pra caber certinho */
+  border-radius: 16px; /* deixa com um charme arredondado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto img:hover {
+  transform: scale(1.05) rotate(1deg); /* dá um zoomzinho leve e gira de leve */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.quiz .pergunta {
+  margin-bottom: 1.5rem;
+  color: #4c1c8c; /* roxo escuro */
+}
+
+.quiz button {
+  margin-top: 0.5rem;
+  background-color: #7f3fbf; /* roxo médio escuro */
+  color: white;
+  border-radius: 6px;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz button:hover {
+  background-color: #ff7300; /* laranja mais forte */
+}
+
+.resposta {
+  margin-top: 0.5rem;
+  color: #e86c00; /* laranja forte */
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #b35e00; /* laranja médio escuro */
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
