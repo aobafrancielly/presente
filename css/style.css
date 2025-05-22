@@ -145,7 +145,6 @@ section {
   }
 }
 
-
 .foto {
   background-color: #c6a1ff; /* roxo pastel mais escuro */
   padding: 2rem;
@@ -215,5 +214,47 @@ footer {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+
+/* teste */
+
+.foto {
+  position: relative;
+  background-color: #c6a1ff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  overflow: hidden; /* ESSENCIAL */
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.foto.expandida {
+  z-index: 999;
+  transform: scale(1.5);
+}
+
+.coracao {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://i.pinimg.com/1200x/35/8e/dd/358edde444e70f7abcaecdcfc0c1e736.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: subir 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes subir {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.5);
   }
 }
