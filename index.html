@@ -9,6 +9,7 @@
 <body>
 
   <div id="intro" class="intro">
+    <div class="particles"></div>
     <div class="intro-content">
       <h1>Gostaria de ver?</h1>
       <button onclick="iniciarSite()">💖</button>
@@ -136,8 +137,21 @@
   }
 }
   </script>
+  <script>
+  const container = document.querySelector('.particles');
+
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.animationDuration = `${4 + Math.random() * 4}s`;
+    particle.style.width = particle.style.height = `${2 + Math.random() * 4}px`;
+    container.appendChild(particle);
+  }
+</script>
 
   <script src="script.js"></script>
-  
+
 </body>
 </html>
