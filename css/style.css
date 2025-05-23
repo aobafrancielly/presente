@@ -392,3 +392,22 @@ footer {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+
+/* teste */
+
+/* Tablet (768px até 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    background-color: #e0e0e0;
+    font-size: 15px;
+  }
+}
+
+/* Celular (até 767px) */
+@media (max-width: 767px) {
+  body {
+    background-color: #d0d0d0;
+    font-size: 14px;
+  }
+}
